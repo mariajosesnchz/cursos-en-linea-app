@@ -63,6 +63,11 @@ html {
     cursor: pointer;
 }
 
+.container nav i:hover .buy-card > button:hover {
+    border: solid thin #494848;
+    transition: all .4s;
+}
+
 .container nav i {
     font-size: 3rem;
     cursor: pointer;
@@ -146,3 +151,36 @@ h1 {
 
 }
 
+/*Acomodar los elementos de nuestro carrito de compras*/
+.lista_de_cursos {
+    display: none;
+    text-align: center;
+    padding: 10px 0 0 0;
+    border-top: solid thin gray;
+    
+}
+
+.container nav i:hover .buy-card > .lista_de_cursos {
+    display: flex;
+}
+
+.lista_de_cursos img {
+    width: 100px;
+}
+
+.lista_de_cursos p {
+    width: 300px;
+    font-size: 1.3rem;
+    
+}
+
+.lista_de_cursos p:nth-child(4) {
+    padding-left: 40px;
+}
+
+.lista_de_cursos p:last-child span {
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    color: #fff
+}
