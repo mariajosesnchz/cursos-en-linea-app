@@ -7,6 +7,15 @@ let articulosCarrito = [];
 function registrarEventsListeners() {
     //cuando yo le de click a "agregar al carrito de compras"
     listaCursos.addEventListener('click', agregarCurso);
+
+    //Eliminar curso del carrito
+    carrito.addEventListener('click', eliminarCurso);
+
+    //vaciar el carrito
+    vaciarCarritoBtn.addEventListener('click', e => {
+        articulosCarrito = [];
+        limpiarHTML()
+    })
 }
 
 function agregarCurso(e) {
@@ -16,6 +25,16 @@ function agregarCurso(e) {
     //console.log(cursoSeleccionado)
     leerInfo(cursoSeleccionado)
    }
+}
+//Elimina un curso del carrito
+function eliminarCurso(e){
+    if(e.target.classList.contains("borrar-curso")){
+        const cursoId = e.target.getAttribute('data-id');
+        //Eliminar del arreglo del articulosCarrito por el data-id
+        articulosCarrito = articulosCarrito.filter(curso => curso.id !== cursoId)
+        
+        carritoHTML()
+    }
 }
 //leer el contenido de nuestro HTML al que le dimos click y extrae la info del curso
 function leerInfo(curso) {
@@ -59,7 +78,7 @@ function carritoHTML() {
         <p>${curso.titulo}</p>
         <p>${curso.precio}</p>
         <p>${curso.cantidad}</p>
-        <p><span>X</span></p>
+        <p><span class="borrar-curso" data-id = "${curso.id}">X</span></p>
         `;
         contenedorCarrito.appendChild(fila)
     });
