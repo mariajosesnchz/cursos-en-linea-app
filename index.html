@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <nav>
+        <nav id="carrito"> 
             <i class="fa-solid fa-cart-shopping">
                 <div class="buy-card">
                     <ul class="nav-card">
@@ -27,12 +27,12 @@
                          <p>1</p>
                          <p><span>X</span></p>
                     </div>
-                    <button>VACIAR CARRITO</button>
+                    <button id="vaciar_carrito">VACIAR CARRITO</button>
                 </div>
             </i>
         </nav>
         <h1>Cursos en línea</h1>
-        <div class="grid">
+        <div class="grid" id="lista-cursos">
             <div class="items">
                 <img src="img/curso1.jpg">
                 <div class="info">
@@ -40,9 +40,9 @@
                     <p>Romero Hernandez</p>
                     <div class="precio">
                         <p>$300</p>
-                        <p>$40</p>
+                        <p class="descuento">$40</p>
                     </div>
-                    <button>Agregar al carrito</button>
+                    <button class="agregar-carrito" data-id="1">Agregar al carrito</button>
                 </div>
             </div>
             <div class="items">
@@ -52,9 +52,9 @@
                     <p>Cristian Gomez</p>
                     <div class="precio">
                         <p>$300</p>
-                        <p>$40</p>
+                        <p class="descuento">$40</p>
                     </div>
-                    <button>Agregar al carrito</button>
+                    <button class="agregar-carrito" data-id="2">Agregar al carrito</button>
                 </div>
             </div>
             <div class="items">
@@ -64,9 +64,9 @@
                     <p>Rafael Rios</p>
                     <div class="precio">
                         <p>$300</p>
-                        <p>$40</p>
+                        <p class="descuento">$40</p>
                     </div>
-                    <button>Agregar al carrito</button>
+                    <button class="agregar-carrito" data-id="3">Agregar al carrito</button>
                 </div>
             </div>
             <div class="items">
@@ -76,9 +76,9 @@
                     <p>Xavier Acosta</p>
                     <div class="precio">
                         <p>$300</p>
-                        <p>$40</p>
+                        <p class="descuento">$40</p>
                     </div>
-                    <button>Agregar al carrito</button>
+                    <button class="agregar-carrito" data-id="4">Agregar al carrito</button>
                 </div>
             </div>
             <div class="items">
@@ -88,9 +88,9 @@
                     <p>Paul Romero</p>
                     <div class="precio">
                         <p>$300</p>
-                        <p>$40</p>
+                        <p class="descuento">$40</p>
                     </div>
-                    <button>Agregar al carrito</button>
+                    <button class="agregar-carrito" data-id="5">Agregar al carrito</button>
                 </div>
             </div>
             <div class="items">
@@ -100,13 +100,13 @@
                     <p>Dayan Diaz</p>
                     <div class="precio">
                         <p>$300</p>
-                        <p>$40</p>
+                        <p class="descuento">$40</p>
                     </div>
-                    <button>Agregar al carrito</button>
+                    <button class="agregar-carrito" data-id="6">Agregar al carrito</button>
                 </div>
             </div>
         </div>
     </div>
-    
+    <script src="script.js/script.js"></script>
 </body>
 </html>
