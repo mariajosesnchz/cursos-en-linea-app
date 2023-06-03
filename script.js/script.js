@@ -2,7 +2,8 @@ const carrito = document.getElementById("carrito"),
       listaCursos = document.getElementById("lista-cursos"),
       contenedorCarrito = document.querySelector('.buy-card .lista_de_cursos'),
       vaciarCarritoBtn = document.querySelector('#vaciar_carrito');
-registrarEventsListeners()
+let articulosCarrito = [];
+      registrarEventsListeners()
 function registrarEventsListeners() {
     //cuando yo le de click a "agregar al carrito de compras"
     listaCursos.addEventListener('click', agregarCurso);
@@ -26,9 +27,51 @@ function leerInfo(curso) {
         id : curso.querySelector('button').getAttribute('data-id'),
         cantidad : 1
     }
-    //console.log(infoCurso)
+
+    //Revisa si un elemento ya existe en el carrito 
+    const existe =articulosCarrito.some(curso => curso.id === infoCurso.id)
+    
+    if (existe) {
+        //Actualizar la cantidad
+        const cursos = articulosCarrito.map(curso => {
+            if (curso.id === infoCurso.id){
+                curso.cantidad++;
+                return curso
+            }else {
+                return curso;
+            }
+        });
+        [...articulosCarrito,infoCurso]
+    } else {
+         //Agregamos elementos al carrito de comrpras
+    articulosCarrito = [...articulosCarrito,infoCurso]
+    }
+    carritoHTML()
 }
 //Muestra el carrito en el HTML
+function carritoHTML() {
+    limpiarHTML()
+    //Recorre el carrito de compras y genera el HTML
+    articulosCarrito.forEach(curso => {
+        const fila = document.createElement('div');
+        fila.innerHTML = ` 
+        <img src="${curso.imagen}"></img>
+        <p>${curso.titulo}</p>
+        <p>${curso.precio}</p>
+        <p>${curso.cantidad}</p>
+        <p><span>X</span></p>
+        `;
+        contenedorCarrito.appendChild(fila)
+    });
+}
+
+//Elimina los cursos de la lista de cursos
+function limpiarHTML(){
+    //console.log(contenedorCarrito.firstChild)
+    while (contenedorCarrito.firstChild){
+        contenedorCarrito.removeChild(contenedorCarrito.firstChild)
+    }
+}
 
 
     

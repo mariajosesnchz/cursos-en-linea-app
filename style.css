@@ -152,7 +152,7 @@ h1 {
 }
 
 /*Acomodar los elementos de nuestro carrito de compras*/
-.lista_de_cursos {
+.lista_de_cursos div {
     display: none;
     text-align: center;
     padding: 10px 0 0 0;
@@ -160,7 +160,7 @@ h1 {
     
 }
 
-.container nav i:hover .buy-card > .lista_de_cursos {
+.container nav i:hover .buy-card > .lista_de_cursos div {
     display: flex;
 }
 
